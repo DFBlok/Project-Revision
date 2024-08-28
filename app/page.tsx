@@ -1,5 +1,18 @@
-import Image from "next/image";
+"use client";
+import { Calendar } from "@/components/ui/calendar";
+import React from "react";
 
 export default function Home() {
-  return <h1>This is World one</h1>;
+  const [date, setDate] = React.useState<Date | undefined>(new Date());
+  return (
+    <div>
+      <Calendar
+        mode="single"
+        selected={date}
+        onSelect={setDate}
+        className="rounded-md border"
+      />
+      ;
+    </div>
+  );
 }
